@@ -1,0 +1,127 @@
+{
+  "pluginAlias": "homebridge-onvif-camera",
+  "pluginType": "platform",
+  "singular": true,
+  "customUi": true,
+  "customUiPath": "dist/ui",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "ffmpegPath": {
+        "title": "FFMPEG Path",
+        "description": "FFMPEG Path, this is optional unless you want to use specific FFMPEG bin.",
+        "required": false,
+        "type": "string",
+        "minLength": 1
+      },
+      "cameras": {
+        "title": "Cameras",
+        "required": true,
+        "type": "array",
+        "items": {
+          "title": "Camera Config",
+          "type": "object",
+          "properties": {
+            "name": {
+              "title": "Camera Name",
+              "required": true,
+              "type": "string",
+              "minLength": 1
+            },
+            "connection": {
+              "title": "Camera Connection Config",
+              "required": true,
+              "type": "object",
+              "properties": {
+                "username": {
+                  "title": "Username",
+                  "required": true,
+                  "type": "string",
+                  "minLength": 1
+                },
+                "password": {
+                  "title": "Password",
+                  "required": true,
+                  "type": "string"
+                },
+                "hostname": {
+                  "title": "Hostname",
+                  "description": "This can also be ip address. For example: localhost and 127.0.0.1 are both valid config",
+                  "required": true,
+                  "type": "string",
+                  "minLength": 1
+                },
+                "port": {
+                  "title": "Port",
+                  "required": true,
+                  "type": "integer",
+                  "default": 80,
+                  "maximum": 65535
+                },
+                "timeout": {
+                  "title": "Connection Timeout",
+                  "required": false,
+                  "type": "integer",
+                  "minimum": 1
+                }
+              }
+            },
+            "manufacturer": {
+              "title": "Manufacturer",
+              "description": "Customize manufacturer name",
+              "required": false,
+              "type": "string",
+              "minLength": 1
+            },
+            "model": {
+              "title": "Model",
+              "description": "Customize model name",
+              "required": false,
+              "type": "string",
+              "minLength": 1
+            },
+            "serialNumber": {
+              "title": "Serial Number",
+              "description": "Customize serial number",
+              "required": false,
+              "type": "string",
+              "minLength": 1
+            },
+            "firmware": {
+              "title": "Firmware Version",
+              "description": "Customize firmware version",
+              "required": false,
+              "type": "string",
+              "minLength": 1
+            },
+            "motion": {
+              "title": "Enable Motion",
+              "description": "Enable Motion Detection",
+              "required": false,
+              "type": "boolean"
+            },
+            "motionTimeout": {
+              "title": "Motion Timeout",
+              "description": "Once motion detected, the following motions will skip notify until timeout expired.",
+              "required": false,
+              "type": "integer",
+              "minimum": 1
+            },
+            "enableAudio": {
+              "title": "Enable Audio",
+              "description": "Enable camera audio input",
+              "required": false,
+              "type": "boolean"
+            },
+            "enableTwoWayAudio": {
+              "title": "Enable Two Way Audio",
+              "description": "Enable camera audio output, you will be able to use \"talk\" in HomeKit. Note: this not work for every camera.",
+              "required": false,
+              "type": "boolean"
+            }
+          }
+        }
+      }
+    }
+  }
+}

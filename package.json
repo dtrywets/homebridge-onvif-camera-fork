@@ -1,0 +1,57 @@
+{
+  "name": "homebridge-onvif-camera",
+  "displayName": "Homebridge ONVIF Camera",
+  "version": "0.0.5-alpha.3",
+  "description": "Camera support for homebridge with ONVIF protocol.",
+  "license": "Apache-2.0",
+  "author": "ronazst",
+  "type": "module",
+  "main": "dist/plugin/index.js",
+  "files": [
+    "dist",
+    "config.schema.json"
+  ],
+  "funding": [
+    {
+      "type": "buymeacoffee",
+      "url": "https://buymeacoffee.com/ronazst"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronazst/homebridge-onvif-camera.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ronazst/homebridge-onvif-camera/issues"
+  },
+  "engines": {
+    "node": "^18.20.4 || ^20.17.0  || ^22.8.0",
+    "homebridge": "^1.8.0 || ^2.0.0-beta.0"
+  },
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint"
+  },
+  "keywords": [
+    "homebridge-plugin",
+    "camera",
+    "ONVIF"
+  ],
+  "packageManager": "npm@10.9.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "dependencies": {
+    "@homebridge/plugin-ui-utils": "^1.0.3",
+    "onvif": "^0.8.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@types/node": "^20.17.6",
+    "homebridge": "^2.0.0-beta.0",
+    "tsup": "^8.3.5",
+    "turbo": "^2.2.3"
+  }
+}
